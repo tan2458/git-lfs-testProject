@@ -15,6 +15,8 @@
 		94CC34FA22A3ACE30047D5AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CC34F922A3ACE30047D5AA /* main.m */; };
 		94CC350422A3ACE30047D5AA /* git_lfs_testProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CC350322A3ACE30047D5AA /* git_lfs_testProjectTests.m */; };
 		94CC350F22A3ACE30047D5AA /* git_lfs_testProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CC350E22A3ACE30047D5AA /* git_lfs_testProjectUITests.m */; };
+		94CC351F22A3B11A0047D5AA /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CC351D22A3B11A0047D5AA /* libcrypto.a */; };
+		94CC352022A3B11A0047D5AA /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CC351E22A3B11A0047D5AA /* libssl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		94CC350A22A3ACE30047D5AA /* git-lfs-testProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "git-lfs-testProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CC350E22A3ACE30047D5AA /* git_lfs_testProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = git_lfs_testProjectUITests.m; sourceTree = "<group>"; };
 		94CC351022A3ACE30047D5AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94CC351D22A3B11A0047D5AA /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		94CC351E22A3B11A0047D5AA /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CC352022A3B11A0047D5AA /* libssl.a in Frameworks */,
+				94CC351F22A3B11A0047D5AA /* libcrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +107,7 @@
 		94CC34E922A3ACE20047D5AA /* git-lfs-testProject */ = {
 			isa = PBXGroup;
 			children = (
+				94CC351C22A3B11A0047D5AA /* thirdlibs */,
 				94CC34EA22A3ACE20047D5AA /* AppDelegate.h */,
 				94CC34EB22A3ACE20047D5AA /* AppDelegate.m */,
 				94CC34ED22A3ACE20047D5AA /* ViewController.h */,
@@ -130,6 +137,15 @@
 				94CC351022A3ACE30047D5AA /* Info.plist */,
 			);
 			path = "git-lfs-testProjectUITests";
+			sourceTree = "<group>";
+		};
+		94CC351C22A3B11A0047D5AA /* thirdlibs */ = {
+			isa = PBXGroup;
+			children = (
+				94CC351D22A3B11A0047D5AA /* libcrypto.a */,
+				94CC351E22A3B11A0047D5AA /* libssl.a */,
+			);
+			path = thirdlibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,6 +458,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/git-lfs-testProject/thirdlibs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "www.git-lfs-testProject";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -458,6 +478,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/git-lfs-testProject/thirdlibs",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "www.git-lfs-testProject";
 				PRODUCT_NAME = "$(TARGET_NAME)";
